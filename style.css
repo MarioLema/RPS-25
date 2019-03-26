@@ -1,0 +1,37 @@
+  body{
+      margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+}
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.emoji-grid {
+	display: grid;
+	grid-template-columns: repeat( 5, 1fr);
+	grid-template-rows: repeat(5, 1fr);
+	width: max-content;
+	margin: auto;
+}
+.emoji-container {
+	border: solid #a5a5a5 1px;
+	margin: 0.5rem;
+    padding: 0.4rem;
+    transition: all 200ms;
+}
+.emoji-container:hover {
+	transform: scale(1.1);
+	border: none;
+	background: #e3e3e3;
+	border-radius: 5px;
+}
