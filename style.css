@@ -7,6 +7,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  background-color: #fdf86d;
+  background-image: linear-gradient(315deg, #fdf86d 0%, #bddcf1 74%);
+  min-height: 100vh;
+  
 }
 *,
 *::after,
@@ -15,23 +19,69 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+header{
+  margin: 2rem 0;
+}
+h1 {
+	font-family: 'Love Ya Like A Sister', cursive;
+	font-size: 3rem;
+	color: #470000;
+}
+h1 span{
+	font-size: 1rem;
+	background: black;
+	padding: 0.5rem;
+	color: white;
+	border-radius: 5px;
+}
+section {
+	display: flex;
+	justify-content: space-evenly;
+}
 .emoji-grid {
 	display: grid;
 	grid-template-columns: repeat( 5, 1fr);
 	grid-template-rows: repeat(5, 1fr);
 	width: max-content;
-	margin: auto;
 }
 .emoji-container {
-	border: solid #a5a5a5 1px;
 	margin: 0.5rem;
-    padding: 0.4rem;
-    transition: all 200ms;
+	padding: 0.5rem 1rem;
+	transition: all 200ms;
+	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.45);
+	border-radius: 5px;
+	cursor: pointer;
 }
 .emoji-container:hover {
-	transform: scale(1.1);
+	transform: scale(1.05);
 	border: none;
-	background: #e3e3e3;
-	border-radius: 5px;
+	background: #00000021;
+}
+.emoji-container span {
+	font-size: 2rem;
+	filter: sepia(50%);
+}
+.emoji-container p {
+	font-family: 'Pompiere', cursive;
+	margin-top: 0.8rem;
+}
+.emoji-container span:hover {
+	font-size: 2rem;
+	filter: sepia(0%);
+}
+.results-container{
+  display: flex;
+  flex-direction: column;
+}
+.results-container div {
+  margin: auto;
+  font-family: 'Pompiere', cursive;
+}
+.results-container h5{
+  font-family: 'Love Ya Like A Sister', cursive;
+  font-size: 5rem;
+  margin: 1rem 0;
+}
+.duel-text{
+  font-size: 2rem;
 }

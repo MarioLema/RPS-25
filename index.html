@@ -5,43 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>RPS-25</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister|Pompiere" rel="stylesheet"> 
     <link rel="stylesheet" type="text/css" media="screen" href="style.css">
-    <script src="main.js"></script>
 </head>
 <body>
     <header>
         <h1>Rock Paper Scissors 25 <span>Emoji Edition</span></h1>
         <p>here goes the explanation and link to the sites <a></a></p>
     </header>
-    <section>this is the main section
-        <div class="emoji-grid">
-            <div class="emoji-container"><p>GUN</p><span>🔫</span></div>
-            <div class="emoji-container"><p>DYNAMITE</p><span>💥</span></div>
-            <div class="emoji-container"><p>NUKE</p><span>☢️</span></div>
-            <div class="emoji-container"><p>LIGHTNING</p><span>⚡</span></div>
-            <div class="emoji-container"><p>DEVIL</p><span>👹</span></div>
-            <div class="emoji-container"><p>DRAGON</p><span>🐲</span></div>
-            <div class="emoji-container"><p>ALIEN</p><span>👽</span></div>
-            <div class="emoji-container"><p>WATER</p><span>💧</span></div>
-            <div class="emoji-container"><p>BOWL</p><span>🥣</span></div>
-            <div class="emoji-container"><p>AIR</p><span>🌫️</span></div>
-            <div class="emoji-container"><p>MOON</p><span>🌑</span></div>
-            <div class="emoji-container"><p>PAPER</p><span>📜</span></div>
-            <div class="emoji-container"><p>SPONGE</p><span>🛁</span></div>
-            <div class="emoji-container"><p>WOLF</p><span>🐺</span></div>
-            <div class="emoji-container"><p>COCKROACH</p><span>🦗</span></div>
-            <div class="emoji-container"><p>TREE</p><span>🌳</span></div>
-            <div class="emoji-container"><p>MAN</p><span>👨</span></div>
-            <div class="emoji-container"><p>WOMAN</p><span>👩</span></div>
-            <div class="emoji-container"><p>MONKEY</p><span>🐵</span></div>
-            <div class="emoji-container"><p>SNAKE</p><span>🐍</span></div>
-            <div class="emoji-container"><p>AXE</p><span>⛏️</span></div>
-            <div class="emoji-container"><p>SCISSORS</p><span>✂️</span></div>
-            <div class="emoji-container"><p>FIRE</p><span>🔥</span></div>
-            <div class="emoji-container"><p>SUN</p><span>☀️</span></div>
-            <div class="emoji-container"><p>ROCK</p><span>💎</span></div>
+    <section>
+        <div class="emoji-grid" id="js-emoji-container">
+            <div class="emoji-container" data-name="gun"><span>🔫</span><p>GUN</p></div>
+            <div class="emoji-container" data-name="dynamite"><span>💥</span><p>DYNAMITE</p></div>
+            <div class="emoji-container" data-name="nuke"><span>☢️</span><p>NUKE</p></div>
+            <div class="emoji-container" data-name="lightning"><span>⚡</span><p>LIGHTNING</p></div>
+            <div class="emoji-container" data-name="devil"><span>👹</span><p>DEVIL</p></div>
+            <div class="emoji-container" data-name="dragon"><span>🐲</span><p>DRAGON</p></div>
+            <div class="emoji-container" data-name="alien"><span>👽</span><p>ALIEN</p></div>
+            <div class="emoji-container" data-name="water"><span>💧</span><p>WATER</p></div>
+            <div class="emoji-container" data-name="bowl"><span>🥣</span><p>BOWL</p></div>
+            <div class="emoji-container" data-name="air"><span>🌫️</span><p>AIR</p></div>
+            <div class="emoji-container" data-name="moon"><span>🌑</span><p>MOON</p></div>
+            <div class="emoji-container" data-name="paper"><span>📜</span><p>PAPER</p></div>
+            <div class="emoji-container" data-name="sponge"><span>🛁</span><p>SPONGE</p></div>
+            <div class="emoji-container" data-name="wolf"><span>🐺</span><p>WOLF</p></div>
+            <div class="emoji-container" data-name="cockroach"><span>🦗</span><p>COCKROACH</p></div>
+            <div class="emoji-container" data-name="tree"><span>🌳</span><p>TREE</p></div>
+            <div class="emoji-container" data-name="man"><span>👨</span><p>MAN</p></div>
+            <div class="emoji-container" data-name="woman"><span>👩</span><p>WOMAN</p></div>
+            <div class="emoji-container" data-name="monkey"><span>🐵</span><p>MONKEY</p></div>
+            <div class="emoji-container" data-name="snake"><span>🐍</span><p>SNAKE</p></div>
+            <div class="emoji-container" data-name="axe"><span>⛏️</span><p>AXE</p></div>
+            <div class="emoji-container" data-name="scissors"><span>✂️</span><p>SCISSORS</p></div>
+            <div class="emoji-container" data-name="fire"><span>🔥</span><p>FIRE</p></div>
+            <div class="emoji-container" data-name="sun"><span>☀️</span><p>SUN</p></div>
+            <div class="emoji-container" data-name="rock"><span>💎</span><p>ROCK</p></div>
         </div>
-        <div>result container</div>
+        <div class="results-container">
+            <div class="duel-text">
+                <p id="js-battle-text">GET STARTED!</p>
+            </div>
+            <h5 id="js-winner">YOU WIN!</h5>
+            <div>
+                <p>YOU: <span id="js-player-counter">0</span> <span id="js-player-last-play"></span></p>
+                <p>COMPUTER: <span id="js-pc-counter">0</span> <span id="js-pc-last-play"></span></p>
+            </div>
+        </div>
     </section>
+        <script src="app.js"></script>
 </body>
 </html>

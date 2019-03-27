@@ -1,0 +1,455 @@
+// ==================================================================DATA==========================================================================
+//===========MAIN INTERACTIONS TABLE===============
+const INTERACTIONS = {
+    gun: {
+        icon: "🔫",
+        rock: "🔫 targets 💎",
+        sun: "🔫 shoots at ☀️",
+        fire: "🔫 fires 🔥",
+        scissors: "🔫 destroys ✂️",
+        axe: "🔫 chips ⛏️",
+        snake: "🔫 shoots 🐍",
+        monkey: "🔫 shoots 🐵",
+        woman: "🔫 shoots 👩",
+        man: "🔫 shoots 👨",
+        tree: "🔫 targets 🌳",
+        cockroach: "🔫 shoots 🦗",
+        wolf: "🔫 shoots 🐺",
+    },
+    dynamite: {
+        icon: "💥",
+        gun: "💥 outclasses 🔫",
+        rock: "💥 explodes 💎",
+        sun: "💥 smoke blots out ☀️",
+        fire: "💥 starts 🔥",
+        scissors: "💥 explodes ✂️",
+        axe: "💥 explodes ⛏️",
+        snake: "💥 explodes 🐍",
+        monkey: "💥 explodes 🐵",
+        woman: "💥 explodes 👩",
+        man: "💥 explodes 👨",
+        tree: "💥 explodes 🌳",
+        cockroach: "💥 explodes 🦗",
+    },
+    nuke: {
+        icon: "☢️",
+        dynamite: "☢️ outclasses 💥",
+        gun: "☢️ outclasses 🔫",
+        rock: "☢️ incinerates 💎",
+        sun: "☢️ has power of ☀️",
+        fire: "☢️ starts massive 🔥",
+        scissors: "☢️ incinerates ✂️",
+        snake: "☢️ incinerates ⛏️",
+        axe: "☢️ incinerates 🐍",
+        monkey: "☢️ incinerates 🐵",
+        woman: "☢️ incinerates 👩",
+        man: "☢️ incinerates 👨",
+        tree: "☢️ incinerates 🌳",
+    },
+    lightning: {
+        icon: "⚡",
+        nuke: "⚡ defuses ☢️",
+        dynamite: "⚡ ignites 💥",
+        gun: "⚡ melts 🔫",
+        rock: "⚡ splits 💎",
+        sun: "⚡ storm blocks ☀️",
+        fire: "⚡ starts 🔥",
+        scissors: "⚡ melts ✂️",
+        axe: "⚡ melts ⛏️",
+        snake: "⚡ strikes 🐍",
+        monkey: "⚡ strikes 🐵",
+        woman: "⚡ strikes 👩",
+        man: "⚡ strikes 👨",
+    },
+    devil: {
+        icon: "👹",
+        lightning: "👹 casts ⚡",
+        nuke: "👹 inspires ☢️",
+        dynamite: "👹 inspires 💥",
+        gun: "👹 inspires 🔫",
+        rock: "👹 hurls 💎",
+        sun: "👹 curses ☀️",
+        fire: "👹 breathes 🔥",
+        scissors: "👹 immune to ✂️",
+        axe: "👹 immune to ⛏️",
+        snake: "👹 eats 🐍",
+        monkey: "👹 enrages 🐵",
+        woman: "👹 tempts 👩",
+    },
+    dragon: {
+        icon: "🐲",
+        devil: "🐲 commands 👹",
+        lightning: "🐲 breathes ⚡",
+        nuke: "🐲 lived before ☢️",
+        dynamite: "🐲 flosses with 💥",
+        gun: "🐲 immune to 🔫",
+        rock: "🐲 rests upon 💎",
+        sun: "🐲 blots out ☀️",
+        fire: "🐲 breathes 🔥",
+        scissors: "🐲 immune to ✂️",
+        axe: "🐲 immune to ⛏️",
+        snake: "🐲 spawns 🐍",
+        monkey: "🐲 chars 🐵",
+    },
+    alien: {
+        icon: "👽",
+        dragon: "👽 vaporizes 🐲",
+        devil: "👽 non-believer in 👹",
+        lightning: "👽 shoots ⚡",
+        nuke: "👽 defuses ☢️",
+        dynamite: "👽 defuses 💥",
+        gun: "👽 force-fields 🔫",
+        rock: "👽 vaporizes 💎",
+        sun: "👽 destroys ☀️",
+        fire: "👽 fuses 🔥",
+        scissors: "👽 force-fields ✂️",
+        axe: "👽 force-fields ⛏️",
+        snake: "👽 mutates 🐍",
+    },
+    water: {
+        icon: "💧",
+        alien: "💧 toxic to 👽",
+        dragon: "💧 drowns 🐲",
+        devil: "💧 blesses 👹",
+        lightning: "💧 conducts ⚡",
+        nuke: "💧 short-circuits ☢️",
+        dynamite: "💧 douses 💥",
+        gun: "💧 rusts 🔫",
+        rock: "💧 erodes 💎",
+        sun: "💧 reflects ☀️",
+        fire: "💧 puts out 🔥",
+        scissors: "💧 rusts ✂️",
+        axe: "💧 rusts",
+    },
+    bowl: {
+        icon: "🥣",
+        water: "🥣 contains 💧",
+        alien: "🥣 shapes craft of 👽",
+        dragon: "🥣 drowns 🐲",
+        devil: "🥣 blesses 👹",
+        lightning: "🥣 focuses ⚡",
+        nuke: "🥣 encases core of ☢️",
+        dynamite: "🥣 splashes 💥",
+        gun: "🥣 splashes 🔫",
+        rock: "🥣 once made of 💎",
+        sun: "🥣 focuses ☀️",
+        fire: "🥣 snuffs out 🔥",
+        scissors: "🥣 covers ✂️",
+    },
+    air: {
+        icon: "🌫️",
+        bowl: "🌫️ tips over 🥣",
+        water: "🌫️ evaporates 💧",
+        alien: "🌫️ chokes 👽",
+        dragon: "🌫️ freezes 🐲",
+        devil: "🌫️ chokes 👹",
+        lightning: "🌫️ creates ⚡",
+        nuke: "🌫️ blows astray ☢️",
+        dynamite: "🌫️ blows out 💥",
+        gun: "🌫️ tarnishes 🔫",
+        rock: "🌫️ erodes 💎",
+        sun: "🌫️ cools heat of ☀️",
+        fire: "🌫️ blows out 🔥",
+    },
+    moon: {
+        icon: "🌑",
+        air: "🌑 has no 🌫️",
+        bowl: "🌑 shaped like a 🥣",
+        water: "🌑 has no 💧",
+        alien: "🌑 houses 👽",
+        dragon: "🌑 shines on 🐲",
+        devil: "🌑 terrifies 👹",
+        lightning: "🌑 far above ⚡",
+        nuke: "🌑 too far for ☢️",
+        dynamite: "🌑 suffocates 💥",
+        gun: "🌑shine 🔫fight",
+        rock: "🌑 shines on 💎",
+        sun: "🌑 eclipses ☀️",
+    },
+    paper: {
+        icon: "📜",
+        moon: "📜🌑",
+        air: "📜 fans 🌫️",
+        bowl: "📜 mache 🥣",
+        water: "📜 floats on 💧",
+        alien: "📜 disproves 👽",
+        dragon: "📜 rebukes 🐲",
+        devil: "📜 rebukes 👹",
+        lightning: "📜 defines ⚡",
+        nuke: "📜 defines ☢️",
+        dynamite: "📜 encases 💥",
+        gun: "📜 outlaws 🔫",
+        rock: "📜 covers 💎",
+    },
+    sponge: {
+        icon: "🛁",
+        paper: "🛁 soaks 📜",
+        moon: "🛁 looks like 🌑",
+        air: "🛁 uses 🌫️pockets",
+        bowl: "🛁 cleans 🥣",
+        water: "🛁 absorbs 💧",
+        alien: "🛁 intrigues 👽",
+        dragon: "🛁 cleanses 🐲",
+        devil: "🛁 cleanses 👹",
+        lightning: "🛁 conducts ⚡",
+        nuke: "🛁 cleans ☢️",
+        dynamite: "🛁 soaks 💥",
+        gun: "🛁 cleans 🔫",
+    },
+    wolf: {
+        icon: "🐺",
+        sponge: "🐺 chews up 🛁",
+        paper: "🐺 chews up 📜",
+        moon: "🐺 howls at 🌑",
+        air: "🐺 breathes 🌫️",
+        bowl: "🐺 drinks from 🥣",
+        water: "🐺 drinks 💧",
+        alien: "🐺 chases 👽",
+        dragon: "🐺 outruns 🐲",
+        devil: "🐺 bites heiny of 👹",
+        lightning: "🐺 outruns ⚡",
+        nuke: "🐺-2 launches ☢️",
+        dynamite: "🐺 outruns 💥",
+    },
+    cockroach: {
+        icon: "🦗",
+        wolf: "🦗 sleeps in fur of 🐺",
+        sponge: "🦗 nests in 🛁",
+        paper: "🦗 nests between 📜",
+        moon: "🦗 nocturnal with 🌑",
+        air: "🦗 breathes 🌫️",
+        bowl: "🦗 hides under 🥣",
+        water: "🦗 drinks 💧",
+        alien: "🦗 stows away with 👽",
+        dragon: "🦗 eats eggs of 🐲",
+        devil: "🦗 makes men 👹",
+        lightning: "🦗 hides from ⚡",
+        nuke: "🦗 survives ☢️",
+    },
+    tree: {
+        icon: "🌳",
+        cockroach: "🌳 shelters 🦗",
+        wolf: "🌳 shelters 🐺",
+        sponge: "🌳 outlives 🛁",
+        paper: "🌳 creates 📜",
+        moon: "🌳 blocks 🌑",
+        air: "🌳 produces 🌫️",
+        bowl: "🌳 wood creates 🥣",
+        water: "🌳 drinks 💧",
+        alien: "🌳 ensnares 👽 ship",
+        dragon: "🌳 shelters 🐲",
+        devil: "🌳 imprisons 👹",
+        lightning: "🌳 attracts ⚡",
+    },
+    man: {
+        icon: "👨",
+        tree: "👨 plants 🌳",
+        cockroach: "👨 steps on 🦗",
+        wolf: "👨 tames 🐺",
+        sponge: "👨 cleans with 🛁",
+        paper: "👨 writes 📜",
+        moon: "👨 travels to 🌑",
+        air: "👨 breathes 🌫️",
+        bowl: "👨 eats from 🥣",
+        water: "👨 drinks 💧",
+        alien: "👨 disproves 👽",
+        dragon: "👨 slays 🐲",
+        devil: "👨 exorcises 👹",
+    },
+    woman: {
+        icon: "👩",
+        man: "👩 tempts 👨",
+        tree: "👩 plants 🌳",
+        cockroach: "👩 steps on 🦗",
+        wolf: "👩 tames 🐺",
+        sponge: "👩 cleans with 🛁",
+        paper: "👩 writes 📜",
+        moon: "👩 aligns with 🌑",
+        air: "👩 breathes 🌫️",
+        bowl: "👩 eats from 🥣",
+        water: "👩 drinks 💧",
+        alien: "👩 disproves 👽",
+        dragon: "👩 subdues 🐲",
+    },
+    monkey: {
+        icon: "🐵",
+        woman: "🐵 flings poop at 👩",
+        man: "🐵 flings poop at 👨",
+        tree: "🐵 lives in 🌳",
+        cockroach: "🐵 eats 🦗",
+        wolf: "🐵 enrages 🐺",
+        sponge: "🐵 rips up 🛁",
+        paper: "🐵 rips up 📜",
+        moon: "🐵 screeches at 🌑",
+        air: "🐵 breathes 🌫️",
+        bowl: "🐵 smashes 🥣",
+        water: "🐵 drinks 💧",
+        alien: "🐵 infuriates 👽",
+    },
+    snake: {
+        icon: "🐍",
+        monkey: "🐍 bites 🐵",
+        woman: "🐍 bites 👩",
+        man: "🐍 bites 👨",
+        tree: "🐍 lives in 🌳",
+        cockroach: "🐍 eats 🦗",
+        wolf: "🐍 bites 🐺",
+        sponge: "🐍 swallows 🛁",
+        paper: "🐍 nests in 📜",
+        moon: "🐍 nocturnal with 🌑",
+        air: "🐍 breathes 🌫️",
+        bowl: "🐍 sleeps in 🥣",
+        water: "🐍 drinks 💧",
+    },
+    axe: {
+        icon: "⛏️",
+        snake: "⛏️ chops 🐍",
+        monkey: "⛏️ cleaves 🐵",
+        woman: "⛏️ cleaves 👩",
+        man: "⛏️ cleaves 👨",
+        tree: "⛏️ chops down 🌳",
+        cockroach: "⛏️ chops 🦗",
+        wolf: "⛏️ cleaves 🐺",
+        sponge: "⛏️ chops 🛁",
+        paper: "⛏️ slices 📜",
+        moon: "⛏️ reflects 🌑",
+        air: "⛏️ flies through 🌫️",
+        bowl: "⛏️ chops 🥣",
+    },
+    scissors: {
+        icon: "✂️",
+        axe: "✂️ sharper than ⛏️",
+        snake: "✂️ stab 🐍",
+        monkey: "✂️ stab 🐵",
+        woman: "✂️ cut 👩 hair",
+        man: "✂️ cut 👨 hair",
+        tree: "✂️ carve 🌳",
+        cockroach: "✂️ stab 🦗",
+        wolf: "✂️ cut 🐺 hair",
+        sponge: "✂️ cut up 🛁",
+        paper: "✂️ cut 📜",
+        moon: "✂️ reflect 🌑",
+        air: "✂️ swish through 🌫️",
+    },
+    fire: {
+        icon: "🔥",
+        scissors: "🔥 melts ✂️",
+        axe: "🔥 forges ⛏️",
+        snake: "🔥 burns 🐍",
+        monkey: "🔥 burns 🐵",
+        woman: "🔥 burns 👩",
+        man: "🔥 burns 👨",
+        tree: "🔥 burns 🌳",
+        cockroach: "🔥 burns 🦗",
+        wolf: "🔥 burns 🐺",
+        sponge: "🔥 burns 🛁",
+        paper: "🔥 burns 📜",
+        moon: "camp🔥 by 🌑light",
+    },
+    sun: {
+        icon: "☀️",
+        fire: "☀️ made of 🔥",
+        scissors: "☀️ melts ✂️",
+        axe: "☀️ melts ⛏️",
+        snake: "☀️ warms 🐍",
+        monkey: "☀️ warms 🐵",
+        woman: "☀️ warms 👩",
+        man: "☀️ warms 👨",
+        tree: "☀️ feeds 🌳",
+        cockroach: "☀️ warms 🦗",
+        wolf: "☀️ warms 🐺",
+        sponge: "☀️ dries up 🛁",
+        paper: "☀️ shines through 📜",
+    },
+    rock: {
+        icon: "💎",
+        sun: "💎 shades ☀️",
+        fire: "💎 pounds out 🔥",
+        scissors: "💎 smashes ✂️",
+        axe: "💎 chips ⛏️",
+        snake: "💎 crushes 🐍",
+        monkey: "💎 crushes 🐵",
+        woman: "💎 crushes 👩",
+        man: "💎 crushes 👨",
+        tree: "💎 blocks 🌳 roots",
+        cockroach: "💎 squishes 🦗",
+        wolf: "💎 crushes 🐺",
+        sponge: "💎 crushes 🛁",
+    },
+}
+//===========DOM SELECTORS===============
+const SELECTORS = {
+    choices:  document.getElementById("js-emoji-container"),
+    battle:  document.getElementById("js-battle-text"),
+    winner:  document.getElementById("js-winner"),
+    pcCounter:  document.getElementById("js-pc-counter"),
+    playerCounter:  document.getElementById("js-player-counter"),
+    pcLast: document.getElementById("js-pc-last-play"),
+    playerLast: document.getElementById("js-player-last-play"),
+}
+//===========GAME STATE===============
+let DATA = {
+    options: Object.keys(INTERACTIONS),
+    playerChoice: "",
+    pcChoice: "",
+    playerIcon: "",
+    pcIcon: "",
+    battleResult: "",
+    playerCounter: 0,
+    pcCounter: 0,
+    winner: ""
+}
+
+
+// ==================================================================OPERATOR==========================================================================
+function handler(name){
+    DATA.playerChoice = name;
+    DATA.pcChoice = DATA.options[Math.floor(Math.random() * 25)];
+    DATA.playerIcon = INTERACTIONS[name].icon;
+    DATA.pcIcon = INTERACTIONS[DATA.pcChoice].icon;
+
+
+
+    let currentPlay = INTERACTIONS[name];
+    if(currentPlay.hasOwnProperty(DATA.pcChoice)){
+        DATA.battleResult = currentPlay[DATA.pcChoice];
+        DATA.playerCounter++;
+        DATA.winner = "YOU WIN!"
+    }
+    else if(name === DATA.pcChoice){
+        DATA.battleResult = currentPlay.icon;
+        DATA.winner = "IT'S A DRAW";
+    }
+    else{
+        DATA.battleResult = INTERACTIONS[DATA.pcChoice][name];
+        DATA.pcCounter++;
+        DATA.winner = "YOU LOSE!"
+    }
+}
+
+// ==================================================================VIEW==========================================================================
+function viewUpdater(){
+    SELECTORS.battle.innerHTML = DATA.battleResult;
+    SELECTORS.winner.innerHTML = DATA.winner
+    SELECTORS.pcCounter.innerHTML = DATA.pcCounter
+    SELECTORS.playerCounter.innerHTML = DATA.playerCounter
+    SELECTORS.pcLast.innerHTML = DATA.pcIcon;
+    SELECTORS.playerLast.innerHTML = DATA.playerIcon;
+}
+
+
+
+//===========FIRES CLICK EVENTS===============
+SELECTORS.choices.addEventListener("click", function(e){
+    let data;
+    if(e.target.className !== "emoji-container"){
+        data = e.target.parentNode.dataset.name;
+    }
+    else{
+        data = e.target.dataset.name;
+    }
+    if(data !== undefined){
+        handler(data);
+        viewUpdater();
+    }
+    })
